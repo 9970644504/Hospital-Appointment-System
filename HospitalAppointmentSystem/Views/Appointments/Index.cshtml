@@ -1,0 +1,16 @@
+@model IEnumerable<HospitalAppointmentSystem.Models.Appointment>
+@{
+    ViewData["Title"] = "Appointments";
+}
+<h2>Appointments <a class="btn btn-sm btn-primary" href="/Appointments/Create">Schedule</a></h2>
+<table class="table">
+    <thead><tr><th>Date</th><th>Patient</th><th>Doctor</th><th>Status</th><th>Actions</th></tr></thead>
+    <tbody>
+    @foreach(var a in Model){
+        <tr>
+            <td>@a.AppointmentDate</td><td>@a.Patient?.Name</td><td>@a.Doctor?.Name</td><td>@a.Status</td>
+            <td><a class="btn btn-sm btn-secondary" href="/Appointments/Edit/@a.Id">Edit</a> <a class="btn btn-sm btn-danger" href="/Appointments/Delete/@a.Id">Delete</a></td>
+        </tr>
+    }
+    </tbody>
+</table>

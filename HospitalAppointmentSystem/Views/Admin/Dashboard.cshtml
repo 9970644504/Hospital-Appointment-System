@@ -1,0 +1,9 @@
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+<h2>Admin Dashboard</h2>
+<div class="row">
+    <div class="col-md-4"><div class="card p-3">Total Patients: <strong>@ViewData["PatientsCount"]</strong></div></div>
+    <div class="col-md-4"><div class="card p-3">Total Doctors: <strong>@ViewData["DoctorsCount"]</strong></div></div>
+    <div class="col-md-4"><div class="card p-3">Total Appointments: <strong>@ViewData["AppointmentsCount"]</strong></div></div>
+</div>

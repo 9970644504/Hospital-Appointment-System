@@ -1,0 +1,28 @@
+@model HospitalAppointmentSystem.Models.Appointment
+@{
+    ViewData["Title"] = "Schedule Appointment";
+}
+<h2>Schedule Appointment</h2>
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label>Patient</label>
+        <select asp-for="PatientId" class="form-select" asp-items="new Microsoft.AspNetCore.Mvc.Rendering.SelectList((IEnumerable<HospitalAppointmentSystem.Models.Patient>)ViewData["Patients"], "Id", "Name")"></select>
+    </div>
+    <div class="mb-3">
+        <label>Doctor</label>
+        <select asp-for="DoctorId" class="form-select" asp-items="new Microsoft.AspNetCore.Mvc.Rendering.SelectList((IEnumerable<HospitalAppointmentSystem.Models.Doctor>)ViewData["Doctors"], "Id", "Name")"></select>
+    </div>
+    <div class="mb-3">
+        <label>Appointment Date</label>
+        <input asp-for="AppointmentDate" type="datetime-local" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Status</label>
+        <input asp-for="Status" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Notes</label>
+        <textarea asp-for="Notes" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Schedule</button>
+</form>
